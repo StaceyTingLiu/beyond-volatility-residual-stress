@@ -1,3 +1,4 @@
+≈
 # Beyond Volatility: A Leakage-Safe Residual-Stress Signal for Drawdown Risk Monitoring
 
 This repository provides the R replication code for the article:
