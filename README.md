@@ -10,16 +10,16 @@ The code implements a leakage-safe residual-stress framework for drawdown-risk m
 
 The workflow includes:
 
-- Downloading adjusted price data from Yahoo Finance
-- Constructing sector excess returns relative to SPY
-- Estimating a leakage-safe PCA residual-stress signal
-- Computing train-only rolling quantile thresholds
-- Constructing drawdown-onset and early-warning labels
-- Evaluating ROC-AUC and PR-AUC performance
-- Conducting conditional regime analysis
-- Computing event-overlap and lead-time diagnostics
-- Evaluating stress-managed SPY overlay strategies
-- Running robustness checks
+* Downloading adjusted price data from Yahoo Finance
+* Constructing sector excess returns relative to SPY
+* Estimating a leakage-safe PCA residual-stress signal
+* Computing train-only rolling quantile thresholds
+* Constructing drawdown-onset and early-warning labels
+* Evaluating ROC-AUC and PR-AUC performance
+* Conducting conditional regime analysis
+* Computing event-overlap and lead-time diagnostics
+* Evaluating stress-managed SPY overlay strategies
+* Running robustness checks
 
 ## Asset Universe
 
@@ -31,13 +31,13 @@ SPY, XLC, XLY, XLP, XLE, XLF, XLV, XLI, XLK, XLB, XLU, XLRE.
 
 The code uses the following R packages:
 
-- quantmod
-- xts
-- zoo
-- PerformanceAnalytics
-- pROC
-- PRROC
-- scales
+* quantmod
+* xts
+* zoo
+* PerformanceAnalytics
+* pROC
+* PRROC
+* scales
 
 The main script automatically checks for missing packages and installs them when needed.
 
@@ -49,3 +49,40 @@ Open RStudio, set the working directory to this repository folder, and run:
 rm(list = ls())
 graphics.off()
 source("replication_code.R")
+```
+
+The script prints result tables in the R console and displays figures directly in the RStudio Plots pane.
+
+No CSV, PNG, image, PDF, or raw data files are written by default.
+
+## Main Outputs
+
+The replication code produces:
+
+* Early-warning performance tables
+* Conditional regime tables
+* Event-overlap and lead-time diagnostics
+* Overlay performance tables
+* Transaction-cost sensitivity tables
+* Robustness checks
+* Residual-stress and SPY drawdown figures
+* Event-study figures
+* ROC and precision-recall figures
+* Overlay cumulative wealth and drawdown figures
+
+## Data Source
+
+The financial price data are publicly available from Yahoo Finance and are downloaded directly by the R script using `quantmod::getSymbols()`.
+
+Because Yahoo Finance may revise adjusted-price histories over time, small numerical differences may arise when the code is rerun at a later date.
+
+## Repository Files
+
+* `replication_code.R`: Main R replication script
+* `requirements.R`: Package installation helper
+* `README.md`: Repository description and instructions
+* `LICENSE`: Academic-use license
+
+## License
+
+This repository is released for academic reproducibility.
